@@ -56,14 +56,32 @@ public abstract class Person implements Compare {
         teacherList.put(tid, teacher);
     }
 
+    /** 
+     * @see StudentCourseSystem.Compare#compareTo(StudentCourseSystem.Person)
+     * @return 对比ID的大小，当大于其对比对象的ID时，返回1，小于返回-1，相等返回0.
+     */
     @Override
     public int compareTo(Person p) {
         if (this.getId() > p.getId()) {
             return 1;
         } else if (this.getId() < p.getId()) {
-            return 0;
-        } else {
             return -1;
+        } else {
+            return 0;
+        }
+    }
+
+
+    /** 
+     * @see StudentCourseSystem.Compare#equals(java.lang.String)
+     * @return 对比用户类型是否相同，相同返回 true，不同返回false
+     */
+    @Override
+    public boolean equals(String type) {
+        if (this.type == type) {
+            return true;
+        } else {
+            return false;
         }
     }
 }

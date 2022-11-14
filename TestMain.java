@@ -6,7 +6,7 @@ public class TestMain {
 
         // 学生初始化
         Student momoia = new Student("Momoia");
-        Student momori = new Student("momori");
+        Student momori = new Student("Momori");
         System.out.println(Person.getStudentList());
 
         // 教师初始化
@@ -14,7 +14,9 @@ public class TestMain {
         System.out.println(Person.getTeacherList());
 
         // 多态性体现
-        System.out.println("多态性体现：/n Momoia 与 Momori账户对比： " + momoia.compareTo(momori));
+        System.out.print("多态性体现：\n Momoia 与 Momori账户对比： " + momoia.compareTo(momori) + "\n");
+        System.out.print("对比体现：\n 判别 Momoia 用户是否为 Student：" + momoia.equals("student") + "\n");
+
 
         // 课程初始化
         Course java = new Course("java");
@@ -35,6 +37,11 @@ public class TestMain {
 
         // 教师修改分数测试
         System.out.println("------------执行分数修改测试");
-        koko.grade();
+        try {
+            koko.grade();
+        } catch (OutofCourseBoundException e) {
+            System.out.println(e.getMessage());
+        }
+        
     }
 }

@@ -16,6 +16,7 @@ var: `tid`, `sid`       转为    `Person`.`id`
 var: `sname`, `tname`   转为    `Person`.`name`  
 var: `type`             增加。  
 部分方法逻辑更改。  
+完善注释。  
 
 
 ## Info
@@ -25,7 +26,10 @@ file: `Course`      type: `class`                           课程对象。
 file: `Courses`     type: `class`                           课程列表对象。  
 file: `Person`      type: `class`   implement: `Compare`    人物对象。  
 file: `Student`     type: `class`   extend: `Person`        学生对象。  
-file: `Teacher`     type: `class`   extend: `Person`        教师对象。  
+file: `Teacher`     type: `class`   extend: `Person`        教师对象。
 file: `TestMain`    type: `class`                           主类。  
+
+  
+file: `OutofCourseBoundException` type: `class`             错误类。
 
 

@@ -14,7 +14,6 @@ public class Student extends Person {
      */
     private ArrayList<Course> coursesSelected = new ArrayList<Course>();
 
-    // 在下一次需要进行修改
     private HashMap<Course, Double> coursesCredit = new HashMap<Course, Double>();
 
     // 构造方法
@@ -89,24 +88,24 @@ public class Student extends Person {
                 flag = false;
 
             } else if (coursesSelected.contains(Courses.getCourses().get(cid))) {
-                System.out.println(" - 课程已选择！");
+                System.out.println(" -- 课程已选择！");
 
             } else if (Courses.getCourses().containsKey(cid)) {
                 coursesSelected.add(Courses.getCourses().get(cid));
                 coursesCredit.put(Courses.getCourses().get(cid), 0.0);
-                System.out.println(" - 选课成功。");
+                System.out.println(" -- 选课成功。");
 
             } else {
-                System.out.println(" - 课程不存在。");
+                System.out.println(" -- 课程不存在。");
             }
         }
     }
 
     public void printSelect() {
         System.out.println(" * 学生：" + super.getName());
-        System.out.println(" - 已选课程：" + coursesSelected);
+        System.out.println(" -- 已选课程：" + coursesSelected);
         for (Map.Entry<Course, Double> entry : coursesCredit.entrySet()) {
-            System.out.println(" - 课程号：" + entry.getKey().getCid() + "\t 课程名：" + entry.getKey().getCname() + "\t分数："
+            System.out.println(" -- 课程号：" + entry.getKey().getCid() + "\t 课程名：" + entry.getKey().getCname() + "\t分数："
                     + entry.getValue());
         }
     }
